@@ -1,4 +1,6 @@
-function CardSpecific(){
+
+function CardSpecific({animals}){
+
     return(
         <div>
             // card details

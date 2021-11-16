@@ -1,17 +1,26 @@
-function CardView({handleDeleteItem}){
 
-    function handleDelete() {
+function CardView({handleDeleteItem, animal : {name, animal_type, breed, img_url, shelter_id }}){
+  function handleDelete() {
         fetch(`http://localhost:9292/${categorys}/${category}.${id}`, {
           method: 'DELETE',
         })
           .then(resp => resp.json())
           .then((item) => handleDeleteItem(item))
-      }
-
-    return(
+      }  
+  
+  return(
         <div>
-            <button id="deleteCard" onClick={handleDelete}>Delete</button>
-            // card information goes here
+            // delete card
+            // edit card
+            <img src={img_url} alt={animal_type}/>
+            <h4>{name}</h4>
+            <p></p>
+
+
+
+    
+
+  
         </div>
     )
 }
