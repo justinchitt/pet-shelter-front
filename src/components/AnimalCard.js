@@ -8,7 +8,6 @@ function AnimalCard({handleDeleteItem, animal : {name, animal_type, breed, img_u
     .then(resp => resp.json())
     .then(setShelterName)
   },[])
-  console.log(shelterName)
 
 
   // function handleDelete() {
