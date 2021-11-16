@@ -18,7 +18,7 @@ function AnimalAdd() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        fetch("", {
+        fetch("http://localhost:9292/animals", {
             method: "POST",
             headers: {"Content-Type":"application/json"},
             body:JSON.stringify(formData)
