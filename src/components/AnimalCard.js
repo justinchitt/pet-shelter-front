@@ -1,5 +1,5 @@
 
-function CardView({handleDeleteItem, animal : {name, animal_type, breed, img_url, shelter_id }}){
+function AnimalCard({handleDeleteItem, animal : {name, animal_type, breed, img_url, shelter_id }}){
   function handleDelete() {
         fetch(`http://localhost:9292/${categorys}/${category}.${id}`, {
           method: 'DELETE',
@@ -25,4 +25,4 @@ function CardView({handleDeleteItem, animal : {name, animal_type, breed, img_url
     )
 }
 
-export default CardView;
+export default AnimalCard;

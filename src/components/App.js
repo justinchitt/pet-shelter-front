@@ -1,11 +1,11 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Header from "./Header"
 import Navbar from "./Navbar"
-import Animals from "./Animals";
-import Applications from "./Applications";
-import Shelters from "./Shelters";
+import AnimalsContainer from "./AnimalsContainer";
+import ApplicationsContainer from "./ApplicationsContainer";
+import SheltersContainer from "./SheltersContainer";
 import Home from "./Home";
-import AnimalForm from './AnimalForm';
+import AnimalAdd from './AnimalAdd';
 
 function App() {
   return (
@@ -15,16 +15,16 @@ function App() {
       <Navbar/>
         <Switch>
           <Route exact path="/animals">
-            <Animals />
+            <AnimalsContainer />
           </Route>
           <Route path="/applications">
-            <Applications />
+            <ApplicationsContainer />
           </Route>
           <Route path="/shelters">
-            <Shelters />
+            <SheltersContainer />
           </Route>
           <Route path="/animals/new">
-            <AnimalForm />
+            <AnimalAdd />
           </Route>
           <Route exact path="/">
             <Home />
