@@ -1,8 +1,11 @@
+
 import { useState, useEffect } from 'react';
 import CardView from "./CardView";
+import { useHistory } from 'react-router-dom';
 
 
 function Animals() {
+  let history = useHistory();
     const [animals, setAnimals] = useState([]);
 
     useEffect(() => {
@@ -16,11 +19,14 @@ function Animals() {
     return (
         <>
             <h1>Animals</h1>
+      <button onClick={()=> history.push('/animals/new')}>Add Animal</button>
             <div className="cards">
                 {animalCards}
+    
             </div>
         </>
     );
+
 }
 
 export default Animals;

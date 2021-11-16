@@ -5,6 +5,7 @@ import Animals from "./Animals";
 import Applications from "./Applications";
 import Shelters from "./Shelters";
 import Home from "./Home";
+import AnimalForm from './AnimalForm';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <BrowserRouter>
       <Navbar/>
         <Switch>
-          <Route path="/animals">
+          <Route exact path="/animals">
             <Animals />
           </Route>
           <Route path="/applications">
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route path="/shelters">
             <Shelters />
+          </Route>
+          <Route path="/animals/new">
+            <AnimalForm />
           </Route>
           <Route exact path="/">
             <Home />
