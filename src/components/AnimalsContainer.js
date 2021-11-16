@@ -1,8 +1,6 @@
-
 import { useState, useEffect } from 'react';
 import AnimalCard from "./AnimalCard";
 import { useHistory } from 'react-router-dom';
-
 
 function AnimalsContainer() {
     let history = useHistory();
@@ -22,11 +20,9 @@ function AnimalsContainer() {
             <button onClick={()=> history.push('/animals/new')}>Add Animal</button>
             <div className="cards">
                 {animalCards}
-    
             </div>
         </>
     );
-
 }
 
 export default AnimalsContainer;
