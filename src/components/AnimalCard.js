@@ -1,12 +1,12 @@
 
 function AnimalCard({handleDeleteItem, animal : {name, animal_type, breed, img_url, shelter_id }}){
-  function handleDelete() {
-        fetch(`http://localhost:9292/${categorys}/${category}.${id}`, {
-          method: 'DELETE',
-        })
-          .then(resp => resp.json())
-          .then((item) => handleDeleteItem(item))
-      }  
+  // function handleDelete() {
+  //       fetch(`http://localhost:9292/${categorys}/${category}.${id}`, {
+  //         method: 'DELETE',
+  //       })
+  //         .then(resp => resp.json())
+  //         .then((item) => handleDeleteItem(item))
+  //     }  
   
   return(
         <div>
