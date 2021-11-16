@@ -15,7 +15,7 @@ function ShelterForm() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        fetch("", {
+        fetch("http://localhost:9292/animals", {
             method: "POST",
             headers: {"Content-Type":"application/json"},
             body:JSON.stringify(formData)
@@ -29,7 +29,7 @@ function ShelterForm() {
     return (
         <form onSubmit={handleSubmit}>
             <label> Shelter Name: <input name="name" type="text" value={formData.name} onChange={handleChange} placeholder="La Casa de Perritos" required></input></label>
-            <label> Address: <input name="address" type="text" value={formData.address} onChange={handleChange} placeholder="Snoopy" required></input></label>
+            <label> Address: <input name="address" type="text" value={formData.address} onChange={handleChange} placeholder="Ex: 1234 Cookie St, 90231 CA" required></input></label>
             <button className='submit' type="submit">SUBMIT</button>
         </form>
     )
