@@ -26,7 +26,7 @@ function AnimalCard({handleDeleteItem, animal : {name, animal_type, breed, img_u
             <img src={img_url} alt={animal_type}/>
             <h4>{name}</h4>
             <p>{breed}</p>
-            <p>{shelter_id}</p>
+            <p>{shelterName}</p>
         </div>
   )
 }
