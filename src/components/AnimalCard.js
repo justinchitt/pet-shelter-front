@@ -1,12 +1,23 @@
+import {useState, useEffect} from 'react'
 
-function AnimalCard({handleDeleteItem, animal : {name, animal_type, breed, img_url, shelter_id }}){
+function AnimalCard({handleDeleteItem, animal : {name, animal_type, breed, img_url, shelter_id, id }}){
+  const [shelterName, setShelterName] = useState("")
+
+  useEffect(()=>{
+    fetch(`http://localhost:9292/shelters/${shelter_id}`)
+    .then(resp => resp.json())
+    .then(setShelterName)
+  },[])
+  console.log(shelterName)
+
+
   // function handleDelete() {
-  //       fetch(`http://localhost:9292/${categorys}/${category}.${id}`, {
-  //         method: 'DELETE',
-  //       })
-  //         .then(resp => resp.json())
-  //         .then((item) => handleDeleteItem(item))
-  //     }  
+  //   fetch(`http://localhost:9292/${categorys}/${category}.${id}`, {
+  //     method: 'DELETE',
+  //   })
+  //   .then(resp => resp.json())
+  //   .then((item) => handleDeleteItem(item))
+  // }  
   
   return(
         <div>
@@ -14,15 +25,10 @@ function AnimalCard({handleDeleteItem, animal : {name, animal_type, breed, img_u
             // edit card
             <img src={img_url} alt={animal_type}/>
             <h4>{name}</h4>
-            <p></p>
-
-
-
-    
-
-  
+            <p>{breed}</p>
+            <p>{shelter_id}</p>
         </div>
-    )
+  )
 }
 
 export default AnimalCard;
