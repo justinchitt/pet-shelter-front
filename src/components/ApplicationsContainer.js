@@ -8,7 +8,7 @@ function ApplicationsContainer() {
     const [wasClicked, setWasClicked] = useState(false)
     const [rerender, setRerender] = useState(false)
     const [search, setSearch] = useState("")
-   
+
     useEffect(() => {
         fetch("http://localhost:9292/applications")
         .then((resp) => resp.json())

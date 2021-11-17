@@ -23,7 +23,7 @@ function ApplicationEdit ({app, animalName, setRerender, setWasClicked, setAppli
         })
         .then(resp => resp.json())
         .then(data => {
-            setApplications(current => [data,...current])
+            setApplications(current => [...current])
             setFormData({
                 name: "",
                 date: "",

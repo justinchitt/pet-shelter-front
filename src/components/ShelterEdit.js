@@ -22,7 +22,7 @@ function ShelterEdit ({setRerender, setWasClicked, shelter, setShelters}) {
         })
         .then(resp => resp.json())
         .then(data => {
-            setShelters(current => [data,...current])
+            setShelters(current => [...current])
             setFormData({
                 name: "",
                 address: ""

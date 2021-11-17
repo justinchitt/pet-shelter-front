@@ -25,7 +25,7 @@ function AnimalEdit({setAnimals, animal, shelterName, setRerender, setWasClicked
         })
         .then(resp => resp.json())
         .then(data => {
-            setAnimals(current => [data,...current])
+            setAnimals(current => [...current])
             setFormData({
             name: "",
             animal_type: "dog",
