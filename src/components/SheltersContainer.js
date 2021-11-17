@@ -1,24 +1,30 @@
 
-import { useHistory } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 import ShelterCard from './ShelterCard'
+import ShelterAdd from './ShelterAdd'
 
 function Shelters() {
     const [shelters, setShelters] = useState([]);
-   let history = useHistory();
+    const [wasClicked, setWasClicked] = useState(false)
+    const [rerender, setRerender] = useState(false)
 
     useEffect(() => {
         fetch("http://localhost:9292/shelters")
         .then((resp) => resp.json())
         .then(setShelters)
-    }, [])
+    }, [rerender])
 
-    const shelterCards = shelters.map((shelter) => <ShelterCard key={shelter.id} shelter={shelter}/>);
+    function handleClick() {
+        setWasClicked(current => !current)
+    }
+
+    const shelterCards = shelters.map((shelter) => <ShelterCard setRerender={setRerender} setShelters={setShelters} key={shelter.id} shelter={shelter}/>);
 
     return (
         <>
             <h1>Shelters</h1>
-      <button onClick={()=> history.push('/shelters/new')}>Add a Shelter</button>
+            {wasClicked?<ShelterAdd setWasClicked={setWasClicked} setShelters={setShelters} />:null}
+            <button onClick={handleClick}>Add a Shelter</button>
             {shelterCards}
         </>
 

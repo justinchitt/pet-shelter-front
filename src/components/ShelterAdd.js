@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function ShelterForm() {
+function ShelterAdd({setShelters, setWasClicked}) {
     const [formData, setFormData] = useState({
         name: "",
         address: ""
@@ -15,14 +15,19 @@ function ShelterForm() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        fetch("http://localhost:9292/animals", {
+        fetch("http://localhost:9292/shelters", {
             method: "POST",
             headers: {"Content-Type":"application/json"},
             body:JSON.stringify(formData)
         })
         .then(resp => resp.json())
         .then(data => {
-            console.log(data)
+            setShelters(current => [data, ...current])
+            setFormData({
+                name: "",
+                address: ""
+            })
+            setWasClicked(false)
         });
     }
 
@@ -35,4 +40,4 @@ function ShelterForm() {
     )
 }
 
-export default ShelterForm
+export default ShelterAdd

@@ -6,9 +6,6 @@ import ApplicationsContainer from "./ApplicationsContainer";
 import SheltersContainer from "./SheltersContainer";
 import Home from "./Home";
 
-import ShelterAdd from "./ShelterAdd"
-import ApplicationAdd from "./ApplicationAdd"
-
 function App() {
   return (
     <div className="App">
