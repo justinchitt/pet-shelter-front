@@ -5,7 +5,7 @@ import AnimalsContainer from "./AnimalsContainer";
 import ApplicationsContainer from "./ApplicationsContainer";
 import SheltersContainer from "./SheltersContainer";
 import Home from "./Home";
-import AnimalAdd from './AnimalAdd';
+
 import ShelterAdd from "./ShelterAdd"
 import ApplicationAdd from "./ApplicationAdd"
 
@@ -24,15 +24,6 @@ function App() {
           </Route>
           <Route exact path="/shelters">
             <SheltersContainer />
-          </Route>
-          <Route path="/animals/new">
-            <AnimalAdd />
-          </Route>
-          <Route path="/shelters/new">
-            <ShelterAdd />
-          </Route>
-          <Route path="/applications/new">
-            <ApplicationAdd />
           </Route>
           <Route exact path="/">
             <Home />

@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function AnimalAdd() {
+function AnimalAdd({setAnimals}) {
     const [formData, setFormData] = useState({
         name: "",
         animal_type: "dog",
@@ -18,14 +18,20 @@ function AnimalAdd() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        fetch("", {
+        fetch("http://localhost:9292/animals", {
             method: "POST",
             headers: {"Content-Type":"application/json"},
             body:JSON.stringify(formData)
         })
         .then(resp => resp.json())
         .then(data => {
-            console.log(data)
+            setAnimals(current => [...current, data])
+            setFormData({
+            name: "",
+            animal_type: "dog",
+            breed: "",
+            img_url: "",
+            shelter: ""})
         });
     }
 
