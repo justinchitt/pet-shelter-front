@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import ApplicationEdit from './ApplicationEdit'
 
-function ApplicationCard({app, setRerender, setApplications, app: {name, date, animal_id}}) {
+function ApplicationCard({app, setRerender, setApplications, app: {name, date, animal_id}, handleDeleteItem}) {
     const [animalName, setAnimalName] = useState("")
     const [wasClicked, setWasClicked] = useState(false)
 
@@ -15,12 +15,21 @@ function ApplicationCard({app, setRerender, setApplications, app: {name, date, a
         setWasClicked(current => !current)
       }
 
+      function handleDelete() {
+        fetch(`http://localhost:9292/applications/${app.id}`, {
+          method: 'DELETE',
+        })
+          .then(resp => resp.json())
+          .then((item) => handleDeleteItem(item))
+      }   
+
     return(
         <div>
             <h3>{name}</h3>
             <p>{date}</p>
             <p>{animalName}</p>
             <button onClick={handleClick}>Edit</button>
+            <button onClick={handleDelete}>Delete</button>
             {wasClicked?<ApplicationEdit setApplications={setApplications} setRerender={setRerender} setWasClicked={setWasClicked} app={app} animalName={animalName} />:null}
         </div>
     )

@@ -18,7 +18,12 @@ function Shelters() {
         setWasClicked(current => !current)
     }
 
-    const shelterCards = shelters.map((shelter) => <ShelterCard setRerender={setRerender} setShelters={setShelters} key={shelter.id} shelter={shelter}/>);
+    function handleDeleteItem(deletedShelter) {
+        const updatedShelters = shelters.filter((shelter) => shelter.id !== deletedShelter.id);
+        setShelters(updatedShelters);
+        }
+
+    const shelterCards = shelters.map((shelter) => <ShelterCard setRerender={setRerender} setShelters={setShelters} key={shelter.id} shelter={shelter} handleDeleteItem={handleDeleteItem}/>);
 
     return (
         <>

@@ -18,7 +18,12 @@ function ApplicationsContainer() {
         setWasClicked(current => !current)
     }
 
-    const appCards = applications.map((app) => <ApplicationCard key={app.id} app={app} setRerender={setRerender} setApplications={setApplications}/>);
+    function handleDeleteItem(deletedApplication) {
+        const updatedApplication = applications.filter((application) => application.id !== deletedApplication.id);
+        setApplications(updatedApplication);
+        }
+
+    const appCards = applications.map((app) => <ApplicationCard key={app.id} app={app} setRerender={setRerender} setApplications={setApplications} handleDeleteItem={handleDeleteItem}/>);
     return (
         <>
         <h1>Applications</h1>

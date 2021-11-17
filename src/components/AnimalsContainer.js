@@ -18,7 +18,12 @@ function AnimalsContainer() {
         setWasClicked(current => !current)
     }
 
-    const animalCards = animals.map((animal) => <AnimalCard setAnimals={setAnimals} key={animal.id} animal={animal} setRerender={setRerender}/>);
+    function handleDeleteItem(deletedAnimal) {
+        const updatedAnimals = animals.filter((animal) => animal.id !== deletedAnimal.id);
+        setAnimals(updatedAnimals);
+        }
+
+    const animalCards = animals.map((animal) => <AnimalCard setAnimals={setAnimals} key={animal.id} animal={animal} setRerender={setRerender} handleDeleteItem={handleDeleteItem}/>);
 
     return (
         <>

@@ -12,13 +12,13 @@ function AnimalCard({handleDeleteItem, animal, animal : {name, animal_type, bree
   },[])
 
 
-  // function handleDelete() {
-  //   fetch(`http://localhost:9292/${categorys}/${category}.${id}`, {
-  //     method: 'DELETE',
-  //   })
-  //   .then(resp => resp.json())
-  //   .then((item) => handleDeleteItem(item))
-  // }  
+  function handleDelete() {
+    fetch(`http://localhost:9292/animals/${animal.id}`, {
+      method: 'DELETE',
+    })
+      .then(resp => resp.json())
+      .then((item) => handleDeleteItem(item))
+  }  
 
 
 
@@ -33,7 +33,7 @@ function AnimalCard({handleDeleteItem, animal, animal : {name, animal_type, bree
             <p>{breed}</p>
             <p>{shelterName}</p>
             <button onClick={handleClick}>Edit</button>
-            <button>Delete</button>
+            <button onClick={handleDelete}>Delete</button>
             {wasClicked?<AnimalEdit setWasClicked={setWasClicked} setRerender={setRerender} setAnimals={setAnimals} animal={animal} shelterName={shelterName}/>:null}
         </div>
   )
