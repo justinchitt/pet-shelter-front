@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import AnimalEdit from './AnimalEdit'
 
-function AnimalCard({handleDeleteItem, animal, animal : {name, animal_type, breed, img_url, shelter_id, id }, setAnimals}){
+function AnimalCard({handleDeleteItem, animal, animal : {name, animal_type, breed, img_url, shelter_id, id }, setAnimals, setRerender}){
   const [shelterName, setShelterName] = useState("")
   const [wasClicked, setWasClicked] = useState(false)
 
@@ -34,7 +34,7 @@ function AnimalCard({handleDeleteItem, animal, animal : {name, animal_type, bree
             <p>{shelterName}</p>
             <button onClick={handleClick}>Edit</button>
             <button>Delete</button>
-            {wasClicked?<AnimalEdit setAnimals={setAnimals} animal={animal} shelterName={shelterName}/>:null}
+            {wasClicked?<AnimalEdit setWasClicked={setWasClicked} setRerender={setRerender} setAnimals={setAnimals} animal={animal} shelterName={shelterName}/>:null}
         </div>
   )
 }

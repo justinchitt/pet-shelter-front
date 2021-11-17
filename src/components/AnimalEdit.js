@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function AnimalEdit({setAnimals, animal, shelterName}) {
+function AnimalEdit({setAnimals, animal, shelterName, setRerender, setWasClicked}) {
     const [formData, setFormData] = useState({
         name: animal.name,
         animal_type: animal.animal_type,
@@ -25,14 +25,16 @@ function AnimalEdit({setAnimals, animal, shelterName}) {
         })
         .then(resp => resp.json())
         .then(data => {
-            setAnimals(current => [...current, data])
+            setAnimals(current => [data,...current])
             setFormData({
             name: "",
             animal_type: "dog",
             breed: "",
             img_url: "",
             shelter: ""})
-        });
+            setRerender(current => !current)
+            setWasClicked(false)
+        })
     }
 
     return (
