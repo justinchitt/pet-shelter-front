@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function AnimalAdd({setAnimals, wasClicked}) {
+function AnimalAdd({setAnimals, setWasClicked}) {
     const [formData, setFormData] = useState({
         name: "",
         animal_type: "dog",
@@ -32,7 +32,7 @@ function AnimalAdd({setAnimals, wasClicked}) {
             breed: "",
             img_url: "",
             shelter: ""})
-            wasClicked(current => false)
+            setWasClicked(current => false)
         });
     }
 
