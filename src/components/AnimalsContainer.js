@@ -8,6 +8,7 @@ function AnimalsContainer() {
     const [wasClicked, setWasClicked] = useState(false)
     const [rerender, setRerender] = useState()
     const [search, setSearch] = useState("")
+    const [filterType, setFilterType] = useState("all")
 
     useEffect(() => {
         fetch("http://localhost:9292/animals")
@@ -32,19 +33,34 @@ function AnimalsContainer() {
             || 
             animal.breed.toLowerCase().includes(search.toLowerCase())
         )
+     
     })
     
+    function filteredAnimalsByType() {
+        if (filterType === "all") {
+            return filteredAnimals
+        } else {
+            return filteredAnimals.filter((animal) =>{
+                return animal.animal_type === filterType
+            })
+        }
+    }
+    
 
-console.log(filteredAnimals)
-console.log(search)
 
+    const animalCards = filteredAnimalsByType().map((animal) => <AnimalCard setAnimals={setAnimals} key={animal.id} animal={animal} setRerender={setRerender} handleDeleteItem={handleDeleteItem}/>);
 
-    const animalCards = filteredAnimals.map((animal) => <AnimalCard setAnimals={setAnimals} key={animal.id} animal={animal} setRerender={setRerender} handleDeleteItem={handleDeleteItem}/>);
+    
 
     return (
         <>
             <h1>Animals</h1>
             <input type="text" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} value={search}/>
+            <label> View by animal: <select onChange={(e) => setFilterType(e.target.value)}>
+                    <option value="all">All</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                </select></label>
             <button onClick={handleClick}>Add Animal</button>
             {wasClicked ? <AnimalAdd wasClicked={wasClicked} setAnimals={setAnimals}/>:null}
             <div className="cards">
