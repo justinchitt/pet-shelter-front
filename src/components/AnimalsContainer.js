@@ -7,6 +7,8 @@ function AnimalsContainer() {
     const [animals, setAnimals] = useState([]);
     const [wasClicked, setWasClicked] = useState(false)
     const [rerender, setRerender] = useState()
+    const [search, setSearch] = useState("")
+    const [filterType, setFilterType] = useState("all")
 
     useEffect(() => {
         fetch("http://localhost:9292/animals")
@@ -18,11 +20,47 @@ function AnimalsContainer() {
         setWasClicked(current => !current)
     }
 
-    const animalCards = animals.map((animal) => <AnimalCard setAnimals={setAnimals} key={animal.id} animal={animal} setRerender={setRerender}/>);
+    function handleDeleteItem(deletedAnimal) {
+        const updatedAnimals = animals.filter((animal) => animal.id !== deletedAnimal.id);
+        setAnimals(updatedAnimals);
+        }
+
+
+   
+    const filteredAnimals = animals.filter((animal) => {
+        return (
+            animal.name.toLowerCase().includes(search.toLowerCase()) 
+            || 
+            animal.breed.toLowerCase().includes(search.toLowerCase())
+        )
+     
+    })
+    
+    function filteredAnimalsByType() {
+        if (filterType === "all") {
+            return filteredAnimals
+        } else {
+            return filteredAnimals.filter((animal) =>{
+                return animal.animal_type === filterType
+            })
+        }
+    }
+    
+
+
+    const animalCards = filteredAnimalsByType().map((animal) => <AnimalCard setAnimals={setAnimals} key={animal.id} animal={animal} setRerender={setRerender} handleDeleteItem={handleDeleteItem}/>);
+
+    
 
     return (
         <>
             <h1>Animals</h1>
+            <input type="text" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} value={search}/>
+            <label> View by animal: <select onChange={(e) => setFilterType(e.target.value)}>
+                    <option value="all">All</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                </select></label>
             <button onClick={handleClick}>Add Animal</button>
             {wasClicked ? <AnimalAdd wasClicked={wasClicked} setAnimals={setAnimals}/>:null}
             <div className="cards">
@@ -33,3 +71,4 @@ function AnimalsContainer() {
 }
 
 export default AnimalsContainer;
+
