@@ -7,7 +7,8 @@ function Shelters() {
     const [shelters, setShelters] = useState([]);
     const [wasClicked, setWasClicked] = useState(false)
     const [rerender, setRerender] = useState(false)
-
+    const [search, setSearch] = useState("")
+    
     useEffect(() => {
         fetch("http://localhost:9292/shelters")
         .then((resp) => resp.json())
@@ -23,11 +24,16 @@ function Shelters() {
         setShelters(updatedShelters);
         }
 
-    const shelterCards = shelters.map((shelter) => <ShelterCard setRerender={setRerender} setShelters={setShelters} key={shelter.id} shelter={shelter} handleDeleteItem={handleDeleteItem}/>);
+    const filteredShelters = shelters.filter((shelter) => {
+        return shelter.name.toLowerCase().includes(search.toLowerCase()) 
+    })
+
+    const shelterCards = filteredShelters.map((shelter) => <ShelterCard setRerender={setRerender} setShelters={setShelters} key={shelter.id} shelter={shelter} handleDeleteItem={handleDeleteItem}/>);
 
     return (
         <>
             <h1>Shelters</h1>
+            <input type="text" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} value={search}/>
             {wasClicked?<ShelterAdd setWasClicked={setWasClicked} setShelters={setShelters} />:null}
             <button onClick={handleClick}>Add a Shelter</button>
             {shelterCards}
