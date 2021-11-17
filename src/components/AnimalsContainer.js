@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 import AnimalCard from "./AnimalCard";
 import { useHistory } from 'react-router-dom';
 import AnimalAdd from './AnimalAdd';
+
 function AnimalsContainer() {
     let history = useHistory();
     const [animals, setAnimals] = useState([]);
     const [wasClicked, setWasClicked] = useState(false)
-    const [rerender, setRerender] = useState()
+    const [rerender, setRerender] = useState(false)
     const [search, setSearch] = useState("")
     const [filterType, setFilterType] = useState("all")
 
@@ -23,34 +24,29 @@ function AnimalsContainer() {
     function handleDeleteItem(deletedAnimal) {
         const updatedAnimals = animals.filter((animal) => animal.id !== deletedAnimal.id);
         setAnimals(updatedAnimals);
-        }
+    }
 
-
-   
-    const filteredAnimals = animals.filter((animal) => {
+    let filteredAnimals = animals.filter((animal) => {
         return (
             animal.name.toLowerCase().includes(search.toLowerCase()) 
             || 
             animal.breed.toLowerCase().includes(search.toLowerCase())
         )
-     
     })
     
     function filteredAnimalsByType() {
         if (filterType === "all") {
             return filteredAnimals
         } else {
-            return filteredAnimals.filter((animal) =>{
+            return filteredAnimals.filter((animal) => {
                 return animal.animal_type === filterType
             })
-        }
+        }  
     }
-    
 
+    console.log(animals)
 
     const animalCards = filteredAnimalsByType().map((animal) => <AnimalCard setAnimals={setAnimals} key={animal.id} animal={animal} setRerender={setRerender} handleDeleteItem={handleDeleteItem}/>);
-
-    
 
     return (
         <>
@@ -62,7 +58,7 @@ function AnimalsContainer() {
                     <option value="cat">Cat</option>
                 </select></label>
             <button onClick={handleClick}>Add Animal</button>
-            {wasClicked ? <AnimalAdd wasClicked={wasClicked} setAnimals={setAnimals}/>:null}
+            {wasClicked ? <AnimalAdd setWasClicked={setWasClicked} setAnimals={setAnimals}/>:null}
             <div className="cards">
                 {animalCards}
             </div>
@@ -71,4 +67,3 @@ function AnimalsContainer() {
 }
 
 export default AnimalsContainer;
-
