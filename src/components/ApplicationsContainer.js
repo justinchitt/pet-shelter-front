@@ -34,7 +34,7 @@ function ApplicationsContainer() {
         <h1>Applications</h1>
         <input type="text" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} value={search}/>
         {wasClicked?<ApplicationAdd setWasClicked={setWasClicked} setApplications={setApplications} />:null}
-        <button onClick={handleClick}>Submit an Application</button>
+        <button onClick={handleClick}>{wasClicked?"Hide Form":"Submit an Application"}</button>
         {appCards}
 
         </>
