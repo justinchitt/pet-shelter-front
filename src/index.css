@@ -68,6 +68,28 @@ button {
     flex-wrap: wrap;
     justify-content: center;
   }
+.same-card {
+    display: flex;
+    border: solid;
+    border-color: #ffcb05;
+    padding: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin: 30px;
+    text-align: center;
+    width: 92%;
+    height: 2%;
+    padding-left: 40px;
+    padding-right: 40px;
+    justify-content: space-around;
+}
+
+.same-card p{
+    font-size: 20px;
+}
+.same-card h1{
+    font-size: 20px;
+}
 
 .card {
     border: solid;
