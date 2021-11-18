@@ -25,7 +25,11 @@ function Shelters() {
         }
 
     const filteredShelters = shelters.filter((shelter) => {
-        return shelter.name.toLowerCase().includes(search.toLowerCase()) 
+        return (
+            shelter.name.toLowerCase().includes(search.toLowerCase()) 
+            || 
+            shelter.address.toLowerCase().includes(search.toLowerCase())
+        ) 
     })
 
     const shelterCards = filteredShelters.map((shelter) => <ShelterCard setRerender={setRerender} setShelters={setShelters} key={shelter.id} shelter={shelter} handleDeleteItem={handleDeleteItem}/>);
@@ -35,7 +39,7 @@ function Shelters() {
             <h1>Shelters</h1>
             <input type="text" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} value={search}/>
             {wasClicked?<ShelterAdd setWasClicked={setWasClicked} setShelters={setShelters} />:null}
-            <button onClick={handleClick}>Add a Shelter</button>
+            <button onClick={handleClick}>{wasClicked?"Hide Form":"Add a Shelter"}</button>
             {shelterCards}
         </>
 

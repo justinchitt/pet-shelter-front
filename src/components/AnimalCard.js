@@ -32,7 +32,7 @@ function AnimalCard({handleDeleteItem, animal, animal : {name, animal_type, bree
             <h4>{name}</h4>
             <p>{breed}</p>
             <p>{shelterName}</p>
-            <button onClick={handleClick}>Edit</button>
+            <button onClick={handleClick}>{wasClicked?"Hide Form":"Edit"}</button>
             <button onClick={handleDelete}>Delete</button>
             {wasClicked?<AnimalEdit setWasClicked={setWasClicked} setRerender={setRerender} setAnimals={setAnimals} animal={animal} shelterName={shelterName}/>:null}
         </div>
