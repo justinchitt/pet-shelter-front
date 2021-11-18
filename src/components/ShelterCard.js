@@ -19,7 +19,7 @@ function ShelterCard({shelter: {name, address, id}, shelter, setShelters, setRer
     }
 
     return(
-        <div>
+        <div className="card">
             <h3>{name}</h3>
             <p>{address}</p>
             <button onClick={handleClick}>{wasClicked?"Hide Form":"Edit"}</button>

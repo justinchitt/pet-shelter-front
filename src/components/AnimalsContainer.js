@@ -49,8 +49,8 @@ function AnimalsContainer() {
     const animalCards = filteredAnimalsByType().map((animal) => <AnimalCard setAnimals={setAnimals} key={animal.id} animal={animal} setRerender={setRerender} handleDeleteItem={handleDeleteItem}/>);
 
     return (
-        <div id="animals-container">
-            <h1 class="title">Animals</h1>
+        <div className="container">
+            <h1 className="title">Animals</h1>
             <input type="text" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} value={search}/>
             <label> View by animal: <select onChange={(e) => setFilterType(e.target.value)}>
                     <option value="all">All</option>

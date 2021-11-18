@@ -24,7 +24,7 @@ function ApplicationCard({app, setRerender, setApplications, app: {name, date, a
       }   
 
     return(
-        <div>
+        <div className="card">
             <h3>{name}</h3>
             <p>{date}</p>
             <p>{animalName}</p>
