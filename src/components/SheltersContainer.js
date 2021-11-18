@@ -36,10 +36,12 @@ function Shelters() {
 
     return (
         <div className="container">
-            <h1>Shelters</h1>
+            <div className="title-and-search">
+            <h1 className="page-title">Shelters</h1>
             <input type="text" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} value={search}/>
             {wasClicked?<ShelterAdd setWasClicked={setWasClicked} setShelters={setShelters} />:null}
             <button onClick={handleClick}>{wasClicked?"Hide Form":"Add a Shelter"}</button>
+            </div>
             <div className="cards">
             {shelterCards}
             </div>
