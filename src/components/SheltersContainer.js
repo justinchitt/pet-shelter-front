@@ -36,7 +36,7 @@ function Shelters() {
 
     return (
 
-        <div className=="same-container">
+        <div className="same-container">
             <div className="title-and-search">
             <h1 className="page-title">Shelters</h1>
             <input type="text" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} value={search}/>
