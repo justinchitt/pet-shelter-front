@@ -24,10 +24,10 @@ function ApplicationCard({app, setRerender, setApplications, app: {name, date, a
       }   
 
     return(
-        <div className="card">
-            <h3>{name}</h3>
-            <p>{date}</p>
-            <p>{animalName}</p>
+        <div className="same-card">
+            <h3>Applicant: {name}</h3>
+            <p> Date Submitted: {date}</p>
+            <p>Animal Requested: {animalName}</p>
             <button onClick={handleClick}>{wasClicked?"Hide Form":"Edit"}</button>
             <button onClick={handleDelete}>Delete</button>
             {wasClicked?<ApplicationEdit setApplications={setApplications} setRerender={setRerender} setWasClicked={setWasClicked} app={app} animalName={animalName} />:null}
