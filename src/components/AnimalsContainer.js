@@ -50,7 +50,8 @@ function AnimalsContainer() {
 
     return (
         <div className="container">
-            <h1 className="title">Animals</h1>
+            <div className="title-and-search">
+            <h1>Animals</h1>
             <input type="text" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} value={search}/>
             <label> View by animal: <select onChange={(e) => setFilterType(e.target.value)}>
                     <option value="all">All</option>
@@ -59,6 +60,7 @@ function AnimalsContainer() {
                 </select></label>
             <button onClick={handleClick}>{wasClicked?"Hide Form":"Add Animal"}</button>
             {wasClicked ? <AnimalAdd setWasClicked={setWasClicked} setAnimals={setAnimals}/>:null}
+            </div>
             <div className="cards">
                 {animalCards}
             </div>
