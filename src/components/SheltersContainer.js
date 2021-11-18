@@ -25,7 +25,11 @@ function Shelters() {
         }
 
     const filteredShelters = shelters.filter((shelter) => {
-        return shelter.name.toLowerCase().includes(search.toLowerCase()) 
+        return (
+            shelter.name.toLowerCase().includes(search.toLowerCase()) 
+            || 
+            shelter.address.toLowerCase().includes(search.toLowerCase())
+        ) 
     })
 
     const shelterCards = filteredShelters.map((shelter) => <ShelterCard setRerender={setRerender} setShelters={setShelters} key={shelter.id} shelter={shelter} handleDeleteItem={handleDeleteItem}/>);
