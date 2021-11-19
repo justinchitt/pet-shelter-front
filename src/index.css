@@ -2,7 +2,7 @@
 @font-face {
     font-family: TIMESS__;
     src: url(./fonts/TIMESS__.ttf);
-  }
+}
 
 @font-face {
     font-family: Mermaid1001;
@@ -51,7 +51,6 @@ h1#title {
 }
 
 .nav-links {
-    /* position: relative; */
     text-align: center;
     display: flex;
     justify-content: center;
@@ -85,9 +84,6 @@ div.home {
     font-family: TIMESS__;
     display: flex;
     justify-content: center;
-    /* align-items: center;
-    flex-grow: 1;
-    flex-basis: auto; */
 }
 
 #welcome {
@@ -95,18 +91,7 @@ div.home {
     background-color: #edf6f9;
 }
 
-/* #welcome h1 {
-    font-size: 65px;
-    text-align: center;
-    padding-top:40px;
-    color: #006d77;
-    text-shadow: 2px 2px #ffddd2;
-    font-family: Mermaid1001;
-} */
-
 #welcome p {
-    /* background-color: #ffddd2;
-    border-radius: 7%; */
     font-size: 40px;
     text-align: center;
     padding-left: 100px;
@@ -141,7 +126,6 @@ div.home {
     text-shadow: 2px 2px #006d77;
     margin-top:20px;
 }
-
 
 div.title-and-search {
     display: flex;
@@ -181,14 +165,9 @@ select {
 /* Animal Container and Cards */
 .container {
     display: flex;
-    /* flex-wrap: wrap; */
     justify-content: center;
     margin-left: 6%;
 }
-
-/* .cards {
-    
-} */
 
 .card {
     border: 1px solid #83c5be;
@@ -237,12 +216,6 @@ img {
 }
 
 /* App and Shelter Container and Cards */
-/* .same-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-} */
-
 .same-card {
     border: 1px solid #83c5be;
     background-color: #edf6f9;
@@ -258,7 +231,6 @@ img {
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* justify-content: space-around;  */
     flex-wrap: wrap;
     border-radius: 5%;
     color: #006d77;
@@ -280,11 +252,3 @@ img {
 div.same-card p {
     font-size: 25px;
 }
-
-/* .edit {
-    margin-left: 15%;
-} */
-
-/* .edit {
-    align-self: center;
-} */

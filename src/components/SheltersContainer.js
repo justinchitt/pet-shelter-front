@@ -47,7 +47,6 @@ function Shelters() {
             {shelterCards}
             </div>
         </div>
-
     )
 }
 

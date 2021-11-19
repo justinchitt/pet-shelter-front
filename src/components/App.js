@@ -1,5 +1,4 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import Header from "./Header"
 import Navbar from "./Navbar"
 import AnimalsContainer from "./AnimalsContainer";
 import ApplicationsContainer from "./ApplicationsContainer";
@@ -9,7 +8,6 @@ import Home from "./Home";
 function App() {
   return (
     <div className="App">
-      {/* <Header/> */}
       <BrowserRouter>
       <Navbar/>
         <Switch>
