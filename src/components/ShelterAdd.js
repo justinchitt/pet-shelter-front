@@ -32,10 +32,10 @@ function ShelterAdd({setShelters, setWasClicked}) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="add">
             <label> Shelter Name: <input name="name" type="text" value={formData.name} onChange={handleChange} placeholder="La Casa de Perritos" required></input></label>
-            <label> Address: <input name="address" type="text" value={formData.address} onChange={handleChange} placeholder="Ex: 1234 Cookie St, 90231 CA" required></input></label>
-            <button className='submit' type="submit">SUBMIT</button>
+            <label> Address: <input name="address" type="text" value={formData.address} onChange={handleChange} placeholder="123 Cookie St. San Diego, CA 92037" required></input></label>
+            <button className='submit' type="submit">Submit</button>
         </form>
     )
 }

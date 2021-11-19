@@ -40,8 +40,8 @@ function Shelters() {
             <div className="title-and-search">
             <h1 className="page-title">Shelters</h1>
             <input type="text" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} value={search}/>
+            <button onClick={handleClick}>{wasClicked?"Hide Form":"Add Shelter"}</button>
             {wasClicked?<ShelterAdd setWasClicked={setWasClicked} setShelters={setShelters} />:null}
-            <button onClick={handleClick}>{wasClicked?"Hide Form":"Add a Shelter"}</button>
             </div>
             <div className="same-cards">
             {shelterCards}
