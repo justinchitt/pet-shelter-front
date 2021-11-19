@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import ApplicationCard from './ApplicationCard';
 import ApplicationAdd from './ApplicationAdd';

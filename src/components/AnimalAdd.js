@@ -13,7 +13,6 @@ function AnimalAdd({setAnimals, setWasClicked}) {
         let key = e.target.name
         let value = e.target.value
         setFormData({...formData, [key]: value})
-        console.log(formData)
     }
 
     function handleSubmit(e) {
