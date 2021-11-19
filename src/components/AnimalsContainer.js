@@ -57,12 +57,10 @@ function AnimalsContainer() {
                         </select></label>
                     <button onClick={handleClick}>{wasClicked?"Hide Form":"Add Animal"}</button>
                 </div>
-                <div className="container">
-                        {wasClicked ? <AnimalAdd setWasClicked={setWasClicked} setAnimals={setAnimals}/>:null}
-                    <div className="cards">
-                        {animalCards}
-                    </div>
-                </div>
+                    {wasClicked ? <AnimalAdd setWasClicked={setWasClicked} setAnimals={setAnimals}/>:null}
+            </div>
+            <div className="container">
+                {animalCards}
             </div>
         </>
     );
