@@ -138,6 +138,10 @@ div.title-and-search {
 
 .add {
     background-color: #83c5be;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 input[type="text"] {
@@ -165,8 +169,9 @@ select {
 /* Animal Container and Cards */
 .container {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    margin-left: 6%;
 }
 
 .card {
