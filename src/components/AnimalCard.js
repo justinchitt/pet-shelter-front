@@ -30,10 +30,12 @@ function AnimalCard({handleDeleteItem, animal, animal : {name, animal_type, bree
         <div className="card">
             <img src={img_url} alt={animal_type}/>
             <h4>{name}</h4>
-            <p>{breed}</p>
-            <p>{shelterName}</p>
-            <button onClick={handleClick}>{wasClicked?"Hide Form":"Edit"}</button>
-            <button onClick={handleDelete}>Delete</button>
+            <p className="grow">{breed}</p>
+            <p className="grow">{shelterName}</p>
+            <div className="bttn">
+              <button onClick={handleClick}>{wasClicked?"Hide Form":"Edit"}</button>
+              <button onClick={handleDelete}>Delete</button>
+            </div>
             {wasClicked?<AnimalEdit setWasClicked={setWasClicked} setRerender={setRerender} setAnimals={setAnimals} animal={animal} shelterName={shelterName}/>:null}
         </div>
   )

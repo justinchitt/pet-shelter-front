@@ -23,6 +23,10 @@ li.nav-links {
 
 };
 
+.grow {
+    flex-grow: 2;
+}
+
 
 Link.nav-links {
     text-decoration: none;
@@ -66,7 +70,7 @@ select {
     margin: 8px 0;
     font-size: 14px;
 }
-  
+
 button {
     background-color: silver;
     color: white;
@@ -82,7 +86,7 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
+}
 .same-card {
     /* display: flex; */
     border: solid;
@@ -104,6 +108,9 @@ button {
     justify-content: space-around; 
     flex-wrap: wrap;
 }
+.goright{
+    margin-left: auto;
+}
 
 .same-card p{
     font-size: 20px;
@@ -123,8 +130,15 @@ button {
     text-align: center;
     width: auto;
     height: 375px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 img {
     width: 250px;
+}
+
+.bttn {
+    margin-top: auto;
 }
