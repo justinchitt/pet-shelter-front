@@ -20,8 +20,8 @@ function Home() {
             
             <div id="welcome">
                 {/* <h1>Welcome</h1> */}
-                <p>Best Friend Finder is a management resource for shelters organizations.</p> 
-                <p>Keep track of all the animals in your system, the applications submitted for every animal, and shelter locations—all in one convenient place.</p>
+                <p>The Best Friend Business is a management resource for organizations in the business of helping people find their best friends.</p> 
+                <p>As a shelter resource, it lets you keep track of all the animals in your system, the adoption applications submitted for every animal, and shelter locations—all in one convenient place!</p>
                 <p id="quote">"Until one has loved an animal a part of one's soul remains unawakened." — Anatole France</p>
             </div>
 

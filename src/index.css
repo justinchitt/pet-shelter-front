@@ -107,7 +107,7 @@ div.home {
 #welcome p {
     /* background-color: #ffddd2;
     border-radius: 7%; */
-    font-size: 45px;
+    font-size: 40px;
     text-align: center;
     padding-left: 100px;
     padding-right: 100px;
@@ -118,7 +118,7 @@ div.home {
 }
 
 #welcome #quote {
-    font-size: 30px;
+    font-size: 27px;
     color: #83c5be;
     margin-top: 30px;
 }
