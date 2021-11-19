@@ -26,7 +26,9 @@ function ShelterCard({shelter: {name, address, id}, shelter, setShelters, setRer
             <button onClick={handleClick}>{wasClicked?"Hide Form":"Edit"}</button>
             <button onClick={handleDelete}>Delete</button>
             </div>
+            <div  className="edit">
             {wasClicked ? <ShelterEdit setRerender={setRerender} setShelters={setShelters} shelter={shelter} setWasClicked={setWasClicked} />:null}
+            </div>
         </div>
     )
 }

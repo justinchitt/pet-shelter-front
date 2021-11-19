@@ -35,8 +35,8 @@ function ApplicationsContainer() {
             <div className="title-and-search">
         <h1 className="page-title">Applications</h1>
         <input type="text" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} value={search}/>
+        <button onClick={handleClick}>{wasClicked?"Hide Form":"Add Application"}</button>
         {wasClicked?<ApplicationAdd setWasClicked={setWasClicked} setApplications={setApplications} />:null}
-        <button onClick={handleClick}>{wasClicked?"Hide Form":"Submit an Application"}</button>
         </div>
         <div className="same-cards">
         {appCards}

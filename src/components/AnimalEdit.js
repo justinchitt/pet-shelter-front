@@ -38,6 +38,7 @@ function AnimalEdit({setAnimals, animal, shelterName, setRerender, setWasClicked
     }
 
     return (
+        <div id="animal-edit">
         <form onSubmit={handleSubmit}>
             <label> Animal Name: <input name="name" type="text" value={formData.name} onChange={handleChange} placeholder="Snoopy" required></input></label>
             <label> Animal type: <select onChange={handleChange} required>
@@ -47,8 +48,9 @@ function AnimalEdit({setAnimals, animal, shelterName, setRerender, setWasClicked
             <label> Breed: <input name="breed" type="text" value={formData.breed} onChange={handleChange} placeholder="Chihuahua" required></input></label>
             <label> Image: <input name="img_url" type="text" value={formData.img_url} onChange={handleChange} placeholder="URL" required></input></label>
             <label> Shelter: <input name="shelter" type="text" value={formData.shelter} onChange={handleChange} required></input></label>
-            <button className='submit' type="submit">SUBMIT</button>
+            <button className='submit' type="submit">Submit</button>
         </form>
+        </div>
     )
 }
 

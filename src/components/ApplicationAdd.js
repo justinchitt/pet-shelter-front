@@ -34,11 +34,11 @@ function ApplicationAdd({setApplications, setWasClicked}) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="add">
             <label>Your Name: <input name="name" type="text" value={formData.name} onChange={handleChange} placeholder="First Last" required></input></label>
             <label> Date: <input name="date" type="text" value={formData.date} onChange={handleChange} placeholder="YYYY-MM-DD" required></input></label>
             <label> Animal Name: <input name="animal_name" type="text" value={formData.animal_name} onChange={handleChange} placeholder="Justin's Sister" required></input></label>
-            <button className='submit' type="submit">SUBMIT</button>
+            <button className='submit' type="submit">Submit</button>
         </form>
     )
 }

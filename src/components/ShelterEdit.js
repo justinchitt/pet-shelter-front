@@ -36,7 +36,7 @@ function ShelterEdit ({setRerender, setWasClicked, shelter, setShelters}) {
         <form onSubmit={handleSubmit}>
             <label> Shelter Name: <input name="name" type="text" value={formData.name} onChange={handleChange} placeholder="La Casa de Perritos" required></input></label>
             <label> Address: <input name="address" type="text" value={formData.address} onChange={handleChange} placeholder="Ex: 1234 Cookie St, 90231 CA" required></input></label>
-            <button className='submit' type="submit">SUBMIT</button>
+            <button className='submit' type="submit">Submit</button>
         </form>
     )
 }
