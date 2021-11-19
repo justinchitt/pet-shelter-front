@@ -63,9 +63,9 @@ function AnimalsContainer() {
             </div>
             <div className="container">
             {wasClicked ? <AnimalAdd setWasClicked={setWasClicked} setAnimals={setAnimals}/>:null}
-            </div>
             <div className="cards">
                 {animalCards}
+            </div>
             </div>
         </div>
         </>
