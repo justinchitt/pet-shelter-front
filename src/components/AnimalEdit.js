@@ -26,11 +26,11 @@ function AnimalEdit({setAnimals, animal, shelterName, setRerender, setWasClicked
         .then(data => {
             setAnimals(current => [...current])
             setFormData({
-            name: "",
-            animal_type: "dog",
-            breed: "",
-            img_url: "",
-            shelter: ""})
+                name: "",
+                animal_type: "dog",
+                breed: "",
+                img_url: "",
+                shelter: ""})
             setRerender(current => !current)
             setWasClicked(false)
         })

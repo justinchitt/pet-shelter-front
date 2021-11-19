@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react'
 import ShelterCard from './ShelterCard'
 import ShelterAdd from './ShelterAdd'
@@ -22,7 +21,7 @@ function Shelters() {
     function handleDeleteItem(deletedShelter) {
         const updatedShelters = shelters.filter((shelter) => shelter.id !== deletedShelter.id);
         setShelters(updatedShelters);
-        }
+    }
 
     const filteredShelters = shelters.filter((shelter) => {
         return (
@@ -35,16 +34,15 @@ function Shelters() {
     const shelterCards = filteredShelters.map((shelter) => <ShelterCard setRerender={setRerender} setShelters={setShelters} key={shelter.id} shelter={shelter} handleDeleteItem={handleDeleteItem}/>);
 
     return (
-
         <div className="same-container">
             <div className="title-and-search">
-            <h1 className="page-title">Shelters</h1>
-            <input type="text" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} value={search}/>
-            <button onClick={handleClick}>{wasClicked?"Hide Form":"Add Shelter"}</button>
-            {wasClicked?<ShelterAdd setWasClicked={setWasClicked} setShelters={setShelters} />:null}
+                <h1 className="page-title">Shelters</h1>
+                <input type="text" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} value={search}/>
+                <button onClick={handleClick}>{wasClicked?"Hide Form":"Add Shelter"}</button>
+                {wasClicked?<ShelterAdd setWasClicked={setWasClicked} setShelters={setShelters} />:null}
             </div>
             <div className="same-cards">
-            {shelterCards}
+                {shelterCards}
             </div>
         </div>
     )
