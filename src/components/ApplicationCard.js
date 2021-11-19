@@ -29,8 +29,8 @@ function ApplicationCard({app, setRerender, setApplications, app: {name, date, a
           <p> Date Submitted: {date}</p>
           <p>Animal Requested: {animalName}</p>
           <div className="goright">
-          <button onClick={handleClick}>{wasClicked?"Hide Form":"Edit"}</button>
-          <button onClick={handleDelete}>Delete</button>
+            <button onClick={handleClick}>{wasClicked?"Hide Form":"Edit"}</button>
+            <button onClick={handleDelete}>Delete</button>
           </div>
           {wasClicked?<ApplicationEdit setApplications={setApplications} setRerender={setRerender} setWasClicked={setWasClicked} app={app} animalName={animalName} />:null}
       </div>

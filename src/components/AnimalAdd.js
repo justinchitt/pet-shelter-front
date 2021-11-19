@@ -13,7 +13,6 @@ function AnimalAdd({setAnimals, setWasClicked}) {
         let key = e.target.name
         let value = e.target.value
         setFormData({...formData, [key]: value})
-        console.log(formData)
     }
 
     function handleSubmit(e) {
@@ -27,11 +26,11 @@ function AnimalAdd({setAnimals, setWasClicked}) {
         .then(data => {
             setAnimals(current => [...current, data])
             setFormData({
-            name: "",
-            animal_type: "dog",
-            breed: "",
-            img_url: "",
-            shelter: ""})
+                name: "",
+                animal_type: "dog",
+                breed: "",
+                img_url: "",
+                shelter: ""})
             setWasClicked(current => false)
         });
     }

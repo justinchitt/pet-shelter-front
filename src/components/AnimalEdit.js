@@ -13,7 +13,6 @@ function AnimalEdit({setAnimals, animal, shelterName, setRerender, setWasClicked
         let key = e.target.name
         let value = e.target.value
         setFormData({...formData, [key]: value})
-        console.log(formData)
     }
 
     function handleSubmit(e) {
@@ -27,11 +26,11 @@ function AnimalEdit({setAnimals, animal, shelterName, setRerender, setWasClicked
         .then(data => {
             setAnimals(current => [...current])
             setFormData({
-            name: "",
-            animal_type: "dog",
-            breed: "",
-            img_url: "",
-            shelter: ""})
+                name: "",
+                animal_type: "dog",
+                breed: "",
+                img_url: "",
+                shelter: ""})
             setRerender(current => !current)
             setWasClicked(false)
         })
