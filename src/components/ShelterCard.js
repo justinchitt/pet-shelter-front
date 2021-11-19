@@ -1,19 +1,18 @@
 import { useState } from 'react'
 import ShelterEdit from './ShelterEdit'
 
-function ShelterCard({shelter: {name, address, id}, shelter, setShelters, setRerender, handleDeleteItem}) {
+function ShelterCard({shelter: {name, address}, shelter, setShelters, setRerender, handleDeleteItem}) {
     const [wasClicked, setWasClicked] = useState(false)
 
 
     function handleDelete() {
         fetch(`http://localhost:9292/shelters/${shelter.id}`, {
-          method: 'DELETE',
+            method: 'DELETE',
         })
-          .then(resp => resp.json())
-          .then((item) => handleDeleteItem(item))
-      }  
-      
-      
+        .then(resp => resp.json())
+        .then((item) => handleDeleteItem(item))
+    }  
+
     function handleClick() {
         setWasClicked(current => !current)
     }

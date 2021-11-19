@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react';
 import AnimalCard from "./AnimalCard";
-import { useHistory } from 'react-router-dom';
 import AnimalAdd from './AnimalAdd';
 
 function AnimalsContainer() {
-    let history = useHistory();
     const [animals, setAnimals] = useState([]);
     const [wasClicked, setWasClicked] = useState(false)
     const [rerender, setRerender] = useState(false)
@@ -44,30 +42,28 @@ function AnimalsContainer() {
         }  
     }
 
-    console.log(animals)
-
     const animalCards = filteredAnimalsByType().map((animal) => <AnimalCard setAnimals={setAnimals} key={animal.id} animal={animal} setRerender={setRerender} handleDeleteItem={handleDeleteItem}/>);
 
     return (
         <>
-        <div className="title-and-search">
+            <div className="title-and-search">
                 <h1 className="page-title">Animals</h1>
-            <div className="search">
-            <input type="text" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} value={search}/>
-            <label> View by animal: <select onChange={(e) => setFilterType(e.target.value)}>
-                    <option value="all">All</option>
-                    <option value="dog">Dog</option>
-                    <option value="cat">Cat</option>
-                </select></label>
-            <button onClick={handleClick}>{wasClicked?"Hide Form":"Add Animal"}</button>
+                <div className="search">
+                    <input type="text" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} value={search}/>
+                    <label> View by animal: <select onChange={(e) => setFilterType(e.target.value)}>
+                            <option value="all">All</option>
+                            <option value="dog">Dog</option>
+                            <option value="cat">Cat</option>
+                        </select></label>
+                    <button onClick={handleClick}>{wasClicked?"Hide Form":"Add Animal"}</button>
+                </div>
+                <div className="container">
+                        {wasClicked ? <AnimalAdd setWasClicked={setWasClicked} setAnimals={setAnimals}/>:null}
+                    <div className="cards">
+                        {animalCards}
+                    </div>
+                </div>
             </div>
-            <div className="container">
-            {wasClicked ? <AnimalAdd setWasClicked={setWasClicked} setAnimals={setAnimals}/>:null}
-            <div className="cards">
-                {animalCards}
-            </div>
-            </div>
-        </div>
         </>
     );
 }

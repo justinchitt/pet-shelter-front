@@ -45,6 +45,4 @@ function ApplicationsContainer() {
     )
 }
 
-
 export default ApplicationsContainer;
-
