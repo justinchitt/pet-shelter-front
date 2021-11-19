@@ -1,71 +1,28 @@
-# Getting Started with Create React App
+# Project Title: 
+    The Best Friend Business
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Project Owners: 
+    1. Katelyn Richard 
+        - GitHub userName - katelynjewel 
+    2. Lisa Primeaux Redmond
+        - GitHub userName - lredmo1
+    3. Justin Chittarath
+        - GitHub userName - justinchitt
 
-In the project directory, you can run:
+# Reason for the project: 
+    This project was built in order to apply and showcase the skills we have learned and developed during our phase three training at the Software Engineering Live class - FlatIron Bootcamp (class of 09/21). These skills major in our use of JavaScript and React to manipulate and change the DOM, and also the use of HTML and CSS to develop and design webpages. To create a backend API for our application, we utilized Sinatra to create CRUD responses, Activerecord to make SQL commands, and Ruby to create classes and endpoints.
 
-### `npm start`
+# Project Description: 
+    The Best Friend Business is a management resource for organizations in the business of helping people find their best friends. As a shelter resource, it lets you keep track of all the animals in your system, the adoption applications submitted for every animal, and shelter locations—all in one convenient place! 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    On the animals page, the organization can view all the animals in their system, including details such as their name, breed, and shelter location. Also, the organization is able to add an animal, update/edit the animal, or delete the animal from the database. There is a search feature, where animals can be found by any of their details, and there is a filter to view by only dogs or cats.
+    
+    Similarly on the applications page and shelter page, you can search, add, update, and delete the items contained on those pages.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+# Learnings and Struggles:
+    During the course of building this project, we gathered more experience with handling and manipulating DOM elements, we struggled a lot with our page styling on CSS flexbox and building relations with our tables. In future iterations, we would want to improve upon the layout by learning more about how flexboxes work. We would also like to incorporate a feature that allows the organization to filter animals without any adoption applications to nearby adoption events.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# pet-shelter-front
+# Acknowledgments:
+    We used numerous resources both from our curriculum and those available for free online. These allowed us to expand our knowledge and practice many new skills.
